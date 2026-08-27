@@ -14,7 +14,7 @@ class MoverCarretera(Mover):
 
 class MoverAgua(Mover):
     def mover(self):
-        print("Navegando por")
+        print("Navegando por agua")
 
 class MoverAire(Mover):
     def mover(self):
