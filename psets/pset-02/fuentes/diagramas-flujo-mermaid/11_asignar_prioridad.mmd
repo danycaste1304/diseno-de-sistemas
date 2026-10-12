@@ -1,4 +1,0 @@
-flowchart TD
-A([Actor principal: Administrador]) --> P[/Precondiciones:<br/>Administrador autenticado y estudiante registrado identificado./] --> S1[1. El administrador selecciona al estudiante] --> S2[2. El sistema verifica que exista y esté activo] --> D3{3. ¿Puede recibir prioridad de capitán?}
-D3 -->|No| A3a[3a. El sistema rechaza e informa el motivo] --> F1([Fin])
-D3 -->|Sí| S4[4. El administrador ingresa el equipo oficial] --> S5[5. El sistema asigna rol de Capitán y prioridad] --> S6[6. El sistema registra la modificación] --> S7[7. El sistema confirma la asignación] --> F2([Fin: prioridad asignada])

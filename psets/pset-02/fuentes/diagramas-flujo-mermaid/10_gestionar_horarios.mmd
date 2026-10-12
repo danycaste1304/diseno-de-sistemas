@@ -1,4 +1,0 @@
-flowchart TD
-A([Actor principal: Administrador]) --> P[/Precondiciones:<br/>Administrador autenticado y cancha identificada./] --> S1[1. El administrador selecciona una cancha] --> S2[2. El sistema muestra horarios y estado actuales] --> S3[3. El administrador ingresa el nuevo horario o habilitación] --> D4{4. ¿El horario es válido?}
-D4 -->|No| A4a[4a. El sistema informa hora de inicio o fin inválida] --> F1([Fin])
-D4 -->|Sí| S5[5. El sistema actualiza horarios o habilitación] --> S6[6. El sistema registra la modificación] --> S7[7. El sistema confirma la actualización] --> F2([Fin: horario gestionado])

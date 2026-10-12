@@ -1,4 +1,0 @@
-flowchart TD
-A([Actor principal: Estudiante<br/>El Capitán participa por herencia]) --> P[/Precondiciones:<br/>El estudiante está autenticado./] --> S1[1. El estudiante selecciona Consultar mis reservas] --> S2[2. El sistema busca sus reservas] --> D3{3. ¿Existen reservas registradas?}
-D3 -->|No| A3a[3a. El sistema informa que no existen reservas] --> F1([Fin])
-D3 -->|Sí| S4[4. El sistema muestra fecha, cancha, franja y estado] --> F2([Fin: reservas consultadas])

@@ -1,6 +1,0 @@
-flowchart TD
-A([Actor principal: Administrador]) --> P[/Precondiciones:<br/>Administrador autenticado; canchas, fechas, franja y motivo identificados.<br/>Equipo de montaje opcional./] --> S1[1. El administrador ingresa datos del evento] --> S2[2. El sistema valida los datos] --> D3{3. ¿Los datos son válidos?}
-D3 -->|No| A3a[3a. El sistema rechaza e informa datos inválidos] --> F1([Fin])
-D3 -->|Sí| S4[4. El sistema crea una plantilla de bloqueo] --> S5[5. El sistema replica el bloqueo por cancha y fecha] --> S6[6. El sistema busca reservas CONFIRMADAS en conflicto] --> D7{7. ¿Existen reservas en conflicto?}
-D7 -->|Sí| A7a[7a. El sistema anula cada reserva y registra cada anulación, sin no-show] --> A8a[8a. El sistema mantiene las franjas BLOQUEADAS] --> A9a[9a. El sistema registra la creación del bloqueo] --> A10a[10a. El sistema notifica a solicitantes afectados] --> S11
-D7 -->|No| S8[8. El sistema marca las franjas BLOQUEADAS] --> S9[9. El sistema registra la creación del bloqueo] --> S11[11. El sistema confirma los bloqueos] --> F2([Fin: bloqueos registrados])

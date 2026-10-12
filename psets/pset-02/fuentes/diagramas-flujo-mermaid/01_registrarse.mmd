@@ -1,4 +1,0 @@
-flowchart TD
-A([Actor principal: Estudiante]) --> P[/Precondiciones:<br/>Email y contraseña disponibles.<br/>No existe cuenta con ese email./] --> S1[1. El estudiante selecciona Registrarse] --> S2[2. El sistema solicita datos] --> S3[3. El estudiante ingresa nombre, email y contraseña] --> D4{4. ¿Datos válidos y email no registrado?}
-D4 -->|No| A4a[4a. El sistema informa datos inválidos o email duplicado] --> F1([Fin])
-D4 -->|Sí| S5[5. El sistema crea la cuenta] --> S6[6. El sistema confirma el registro] --> F2([Fin: estudiante registrado])

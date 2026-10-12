@@ -1,4 +1,0 @@
-flowchart TD
-A([Actor principal: Sistema ReservaU<br/>Proceso automático]) --> P[/Precondiciones:<br/>Existe una reserva confirmada, cancelada, anulada o con no-show.<br/>Sede y solicitante identificados./] --> S1[1. El sistema obtiene la sede de la cancha] --> S2[2. El sistema identifica el canal de notificación] --> D3{3. ¿La sede es Campus Norte?}
-D3 -->|Sí| S4[4. El sistema envía correo institucional] --> S6
-D3 -->|No| A3a[3a. El sistema envía mensaje de texto para Campus Sur] --> S6[6. El sistema registra el envío] --> F1([Fin: solicitante notificado])

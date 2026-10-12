@@ -1,8 +1,0 @@
-flowchart TD
-A([Actor principal: Estudiante<br/>El Capitán participa por herencia]) --> P[/Precondiciones:<br/>Autenticado; reserva propia ACTIVA, identificada y aún no iniciada./] --> S1[1. El solicitante pide cancelar su reserva] --> S2[2. El sistema verifica propiedad y estado] --> D3{3. ¿La reserva puede cancelarse?}
-D3 -->|No| A3a[3a. El sistema rechaza e informa el motivo] --> F1([Fin])
-D3 -->|Sí| S4[4. La estrategia obtiene de la configuración el plazo de 2 h o 24 h] --> D5{5. ¿Se cumple el plazo antes del inicio?}
-D5 -->|Sí| S6[6. La reserva pasa a CANCELADA, registra fecha y libera la franja] --> S7[7. El sistema registra la cancelación y notifica] --> F2([Fin: cancelación regular])
-D5 -->|No| A5a[5a. La reserva pasa a NO_SHOW, registra fecha y libera la franja] --> A6a[6a. El estudiante registra y cuenta los no-shows del mes] --> D7a{7a. ¿Alcanzó el límite de 3 no-shows configurado?}
-D7a -->|Sí| A8a[8a. El estudiante crea una suspensión de 7 días] --> A9a[9a. El sistema notifica no-show y suspensión] --> F3([Fin: no-show registrado])
-D7a -->|No| A8b[8b. El sistema notifica el no-show] --> F3

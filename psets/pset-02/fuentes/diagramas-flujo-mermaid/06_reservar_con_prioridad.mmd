@@ -1,8 +1,0 @@
-flowchart TD
-A([Actor principal: Capitán]) --> P[/Precondiciones:<br/>Autenticado, no suspendido y con solicitudes concurrentes; se considera la hora de la solicitud./] --> S1[1. El capitán selecciona cancha, fecha y franja] --> S2[2. El sistema identifica solicitudes concurrentes] --> D3{3. ¿El momento de la solicitud está antes de la hora límite configurada?}
-D3 -->|No| A3a[3a. El sistema procesa con política regular] --> S7
-D3 -->|Sí| S4[4. El sistema verifica prioridad vigente] --> D5{5. ¿El capitán tiene prioridad?}
-D5 -->|No| A5a[5a. El sistema procesa con política regular] --> S7
-D5 -->|Sí| S6[6. El sistema selecciona la solicitud prioritaria] --> S7[7. El sistema valida disponibilidad] --> D8{8. ¿Puede confirmarse?}
-D8 -->|No| A8a[8a. El sistema rechaza e informa el motivo] --> F1([Fin])
-D8 -->|Sí| S9[9. El sistema confirma la reserva y notifica resultados] --> F2([Fin: prioridad procesada])
