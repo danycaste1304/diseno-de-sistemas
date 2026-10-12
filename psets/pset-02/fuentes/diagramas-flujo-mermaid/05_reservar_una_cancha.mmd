@@ -1,0 +1,12 @@
+flowchart TD
+A([Actor principal: Estudiante<br/>El Capitán participa por herencia]) --> P[/Precondiciones:<br/>Autenticado; cancha, fecha y franja seleccionadas./] --> S1[1. El solicitante pide reservar cancha, fecha y franja] --> D2{2. ¿Han pasado 15 minutos o menos desde la selección?}
+D2 -->|No| A2a[2a. El sistema cancela el proceso y deja libre la franja] --> F1([Fin: tiempo agotado])
+D2 -->|Sí| S3[3. El sistema valida suspensión] --> D4{4. ¿El solicitante está suspendido?}
+D4 -->|Sí| A4a[4a. El sistema rechaza e informa la suspensión] --> F2([Fin])
+D4 -->|No| S5[5. El sistema valida el horario de la sede] --> D6{6. ¿Horario permitido?}
+D6 -->|No| A6a[6a. El sistema rechaza e informa el horario permitido] --> F3([Fin])
+D6 -->|Sí| S7[7. El sistema aplica la estrategia de prioridad si hay solicitudes concurrentes] --> D8{8. ¿La solicitud conserva la prioridad?}
+D8 -->|No| A8a[8a. El sistema rechaza e informa la prioridad] --> F4([Fin])
+D8 -->|Sí| S9[9. El creador prepara la reserva con su política de cancelación] --> S10[10. El sistema verifica disponibilidad y registra de forma atómica] --> D11{11. ¿La franja estaba disponible?}
+D11 -->|No| A11a[11a. El sistema rechaza la reserva sin ocupar la franja] --> F5([Fin])
+D11 -->|Sí| S12[12. El sistema notifica por el canal de la sede] --> F6([Fin: reserva confirmada])

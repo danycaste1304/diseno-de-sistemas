@@ -1,0 +1,4 @@
+flowchart TD
+A([Actor principal: Usuario<br/>Estudiante, Capitán o Administrador]) --> P[/Precondiciones:<br/>El usuario tiene una cuenta registrada./] --> S1[1. El usuario selecciona Iniciar sesión] --> S2[2. El sistema solicita email y contraseña] --> S3[3. El usuario ingresa credenciales] --> D4{4. ¿Credenciales correctas?}
+D4 -->|No| A4a[4a. El sistema informa credenciales inválidas] --> F1([Fin])
+D4 -->|Sí| S5[5. El sistema autentica al usuario] --> S6[6. El sistema muestra opciones según el rol] --> F2([Fin: sesión iniciada])

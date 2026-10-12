@@ -1,0 +1,8 @@
+flowchart TD
+A([Actor principal: Capitán]) --> P[/Precondiciones:<br/>Cancha, fecha inicial y franja seleccionadas; número de semanas opcional./] --> S1[1. El capitán ingresa los datos obligatorios y, si desea, semanas, equipo y notas] --> D2{2. ¿La serie comprende de 2 a 8 semanas?}
+D2 -->|No| A2a[2a. El sistema rechaza e informa el rango permitido] --> F1([Fin])
+D2 -->|Sí| S3[3. El sistema valida rol, autenticación, suspensión, cancha y sede] --> D4{4. ¿Cumple las condiciones iniciales?}
+D4 -->|No| A4a[4a. El sistema rechaza sin registrar reservas] --> F2([Fin])
+D4 -->|Sí| S5[5. El sistema genera las fechas semanales tentativas] --> S6[6. Por cada semana valida horario de sede, disponibilidad y prioridad] --> D7{7. ¿Todas las semanas son válidas?}
+D7 -->|No| A7a[7a. El sistema informa la primera semana en conflicto y descarta toda la serie] --> F3([Fin])
+D7 -->|Sí| S8[8. El sistema confirma de forma atómica todas las semanas] --> S9[9. El sistema guarda equipo y notas y notifica] --> F4([Fin: serie confirmada])

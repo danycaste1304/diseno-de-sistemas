@@ -1,0 +1,6 @@
+flowchart TD
+A([Actor principal: Capitán<br/>Invoca este flujo desde Reservar de forma recurrente]) --> P[/Precondiciones:<br/>Existe una serie tentativa de 2 a 8 fechas, con cancha y franja identificadas./] --> S1[1. El capitán envía la solicitud recurrente] --> S2[2. El sistema toma la primera semana pendiente] --> S3[3. El sistema consulta reservas y bloqueos] --> D4{4. ¿La cancha está disponible?}
+D4 -->|No| A4a[4a. El sistema registra la primera semana en conflicto y detiene la validación] --> F1([Fin: serie no disponible])
+D4 -->|Sí| S5[5. El sistema avanza a la siguiente semana] --> D6{6. ¿Quedan semanas por validar?}
+D6 -->|Sí| S3
+D6 -->|No| S7[7. El sistema devuelve disponibilidad completa] --> F2([Fin: disponibilidad validada])

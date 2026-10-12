@@ -1,0 +1,6 @@
+flowchart TD
+A([Actor principal: Administrador<br/>El flujo se activa desde Bloquear canchas para un evento]) --> P[/Precondiciones:<br/>Existe un bloqueo válido y al menos una reserva CONFIRMADA en conflicto./] --> S1[1. El administrador confirma la creación del bloqueo] --> S2[2. El sistema identifica una reserva en conflicto] --> D3{3. ¿La reserva continúa CONFIRMADA?}
+D3 -->|No| A3a[3a. El sistema omite la reserva] --> S7
+D3 -->|Sí| S4[4. El sistema cambia el estado a ANULADA] --> S5[5. El sistema registra el bloqueo como causa] --> S6[6. El sistema mantiene la franja BLOQUEADA] --> S7[7. El sistema revisa si existen más reservas en conflicto] --> D8{8. ¿Existen más reservas?}
+D8 -->|Sí| S2
+D8 -->|No| S9[9. El sistema notifica a los solicitantes afectados] --> F1([Fin: conflictos anulados])

@@ -1,0 +1,6 @@
+flowchart TD
+A([Actor principal: Administrador]) --> P[/Precondiciones:<br/>Administrador autenticado, reserva activa identificada y motivo disponible./] --> S1[1. El administrador selecciona la reserva e ingresa el motivo] --> S2[2. El sistema verifica que exista y esté CONFIRMADA] --> D3{3. ¿La reserva puede anularse?}
+D3 -->|No| A3a[3a. El sistema rechaza e informa el motivo] --> F1([Fin])
+D3 -->|Sí| S4[4. El sistema cambia el estado a ANULADA] --> S5[5. El sistema registra fecha, hora, administrador y motivo] --> D6{6. ¿Existe bloqueo vigente para la franja?}
+D6 -->|Sí| A6a[6a. El sistema conserva la franja BLOQUEADA] --> S8
+D6 -->|No| S7[7. El sistema libera la disponibilidad] --> S8[8. El sistema notifica al solicitante] --> S9[9. El sistema registra la acción administrativa] --> F2([Fin: reserva anulada sin penalización])

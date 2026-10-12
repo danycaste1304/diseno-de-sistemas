@@ -1,0 +1,4 @@
+flowchart TD
+A([Actor principal: Estudiante<br/>El Capitán participa por herencia]) --> P[/Precondiciones:<br/>El estudiante está autenticado./] --> S1[1. El estudiante selecciona Consultar disponibilidad] --> S2[2. El estudiante ingresa sede, cancha o fecha] --> S3[3. El sistema consulta horarios, reservas y bloqueos] --> D4{4. ¿Existen franjas disponibles?}
+D4 -->|No| A4a[4a. El sistema informa que no existen franjas disponibles] --> F1([Fin])
+D4 -->|Sí| S5[5. El sistema muestra franjas disponibles] --> F2([Fin: disponibilidad consultada])
